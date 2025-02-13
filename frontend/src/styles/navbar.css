@@ -10,9 +10,11 @@
     color: white;
 }
 
-.logo {
+.logo a {
     font-size: 24px;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
 }
 
 .search-container {
@@ -66,12 +68,12 @@
 
     .search-container {
         margin: 10px 0;
-        width: 100%;
+        width: 70%;
     }
 
     .nav-links {
         flex-direction: column;
-        width: 100%;
+        width: 30%;
     }
 
     .nav-links a {

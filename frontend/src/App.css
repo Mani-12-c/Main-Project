@@ -1,0 +1,28 @@
+/* WebKit Browsers */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    transition: width 0.2s ease, height 0.2s ease; 
+}
+
+::-webkit-scrollbar:hover {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888 ;
+    border-radius: 10px;
+    transition:  0.3s ease; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+

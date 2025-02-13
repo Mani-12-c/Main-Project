@@ -1,14 +1,183 @@
-.products-container {
-    max-width: 800px;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+  
+  .products-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    }
+
+  body {
+    background-color: #fef5df;
+  }
+
+  .products-title{
+    width: 85%;
     margin: auto;
-    padding: 20px;
+    font-family: Raleway, sans-serif;
+
+  }
+  .products-title hr{
+    width: 98%;
+    border: none;
+    border-bottom: solid 2px #fef5df;
+    left: 20px;
+    transition: all 0.5s;
+  }
+  .products-title h2{
+    padding: 1.5rem 0;
+    font-size: xx-large;
+    font-family: Raleway, sans-serif;
+    
+  }
+
+  .products-list{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    gap: 1.7rem;
+    max-width: 85%;
+    margin: auto;
   }
   
-  .product-card {
-    background: white;
-    padding: 15px;
-    margin: 10px 0;
+  .container {
+    width: 23%;
+    min-width: 250px;
+    height: 400px;
+    position: relative; /* Changed to relative for proper overlay positioning */
+    background-color: rgba(0, 0, 0);
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    box-shadow: 0 0 5px #0000008f;
+    overflow: hidden; /* Ensures the overlay doesn't overflow */
   }
   
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    transition: transform 0.5s; /* Smooth zoom effect */
+  }
+  
+  .overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around; 
+    background: rgba(77, 77, 77, 0.9);
+    color: #fef5df;
+    opacity: 0;
+    transition: all 0.5s;
+    font-family: "Playfair Display", serif;
+    position: absolute; /* Position overlay absolutely */
+    top: 0;
+    left: 0;
+  }
+  
+  .items {
+    padding-left: 20px;
+    letter-spacing:  3px;
+  }
+  
+  .head {
+    font-size: 30px;
+    line-height: 40px;
+    transform: translateY(40px);
+    transition: all 0.7s;
+  }
+  
+  .head hr {
+    display: block;
+    width: 0;
+    border: none;
+    border-bottom: solid 2px #fef5df;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    transition: all 0.5s;
+  }
+  
+  .price {
+    
+
+    font-size: 22px;
+    line-height: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+  }
+
+  .description {
+    
+ 
+    font-size: 0.8rem;
+    line-height: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+  }
+  
+  .price .old {
+    margin: 1.5rem 0;
+    text-decoration: line-through;
+    color: #b3b3b3;
+  }
+  
+  .cart {
+    font-size: 12px;
+    opacity: 0;
+    letter-spacing: 1px;
+    font-family: "Lato", sans-serif;
+    transform: translateY(40px);
+    transition: all 0.7s;
+  }
+  
+  .cart i {
+    font-size: 16px;
+  }
+  
+  .cart span {
+    margin-left: 10px;
+  }
+  
+  .container:hover .overlay {
+    opacity: 1;
+    z-index: 1000;
+  }
+  
+  .container:hover .overlay .head {
+    transform: translateY(0px);
+  }
+  
+  .container:hover .overlay hr {
+    width: 75px;
+    transition-delay: 0.4s;
+  }
+  
+  .container:hover .overlay .price {
+    
+    transform: translateY(0px);
+    transition-delay: 0.3s;
+    opacity: 1;
+  }
+  .container:hover .overlay .description {
+    
+    transform: translateY(0px);
+    transition-delay: 0.46s;
+    opacity: 1;
+  }
+  
+  .container:hover .overlay .cart {
+    transform: translateY(0px);
+    transition-delay: 0.6s;
+    opacity: 1;
+  }
+  
+  .container:hover .product-image {
+    transform: scale(1.05); 
+  }

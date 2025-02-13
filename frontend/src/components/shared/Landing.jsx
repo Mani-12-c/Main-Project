@@ -1,7 +1,17 @@
 // LandingPage.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import '../../styles/landing.css'
+
+
 const LandingPage = () => {
+    const navigate = useNavigate();
+    const { user } = useSelector((state) => state.auth);
+
+    const ShopNow = ()=>{
+        user?navigate('/products'):navigate('/login')
+    }
     return (
         <div className="landing-page">
             <div className="hero">
@@ -9,7 +19,7 @@ const LandingPage = () => {
                     <div className="landingContent">
                         <h1>Welcome to Our E-Commerce Store</h1>
                         <p>Your one-stop shop for all your needs!</p>
-                        <button className="cta-button">Shop Now</button>
+                        <button className="cta-button" onClick={ShopNow}>Shop Now</button>
                     </div>
                 </div>
             </div>
